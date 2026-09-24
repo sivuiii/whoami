@@ -1,0 +1,6 @@
+Invoking command in '/home/sivuiii/whoami/build/ugv_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_safety -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_safety
+Invoked command in '/home/sivuiii/whoami/build/ugv_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_safety -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_safety
+Invoking command in '/home/sivuiii/whoami/build/ugv_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_safety -- -j16 -l16
+Invoked command in '/home/sivuiii/whoami/build/ugv_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_safety -- -j16 -l16
+Invoking command in '/home/sivuiii/whoami/build/ugv_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_safety
+Invoked command in '/home/sivuiii/whoami/build/ugv_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_safety

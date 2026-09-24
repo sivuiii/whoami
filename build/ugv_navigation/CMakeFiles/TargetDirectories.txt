@@ -1,0 +1,9 @@
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/uninstall.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/ugv_navigation_uninstall.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/test.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/edit_cache.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/rebuild_cache.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/list_install_components.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/install.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/install/local.dir
+/home/sivuiii/whoami/build/ugv_navigation/CMakeFiles/install/strip.dir

@@ -1,0 +1,9 @@
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/uninstall.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/ugv_perception_uninstall.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/test.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/edit_cache.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/rebuild_cache.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/list_install_components.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/install.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/install/local.dir
+/home/sivuiii/whoami/build/ugv_perception/CMakeFiles/install/strip.dir

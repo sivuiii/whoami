@@ -1,0 +1,351 @@
+[1.288s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.288s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7c0627d05e20>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7c0627e320f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7c0627e320f0>>)
+[1.554s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.555s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.555s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.555s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.555s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.555s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.556s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/sivuiii/whoami'
+[1.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.557s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.558s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.686s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.686s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.686s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.686s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.687s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.688s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.689s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.690s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.691s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.691s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.694s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['ignore', 'ignore_ament_install']
+[1.694s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'ignore'
+[1.694s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'ignore_ament_install'
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['colcon_pkg']
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'colcon_pkg'
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['colcon_meta']
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'colcon_meta'
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['ros']
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'ros'
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['cmake', 'python']
+[1.695s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'cmake'
+[1.696s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'python'
+[1.696s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['python_setup_py']
+[1.696s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'python_setup_py'
+[1.698s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['ignore', 'ignore_ament_install']
+[1.698s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'ignore'
+[1.698s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'ignore_ament_install'
+[1.699s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['colcon_pkg']
+[1.699s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'colcon_pkg'
+[1.699s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['colcon_meta']
+[1.699s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'colcon_meta'
+[1.699s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['ros']
+[1.699s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'ros'
+[1.699s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['cmake', 'python']
+[1.700s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'cmake'
+[1.700s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'python'
+[1.700s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['python_setup_py']
+[1.700s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'python_setup_py'
+[1.701s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['ignore', 'ignore_ament_install']
+[1.701s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'ignore'
+[1.702s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'ignore_ament_install'
+[1.702s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['colcon_pkg']
+[1.702s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'colcon_pkg'
+[1.702s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['colcon_meta']
+[1.702s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'colcon_meta'
+[1.703s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['ros']
+[1.703s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'ros'
+[1.703s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['cmake', 'python']
+[1.703s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'cmake'
+[1.703s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'python'
+[1.703s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['python_setup_py']
+[1.703s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'python_setup_py'
+[1.704s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['ignore', 'ignore_ament_install']
+[1.705s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'ignore'
+[1.705s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'ignore_ament_install'
+[1.705s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['colcon_pkg']
+[1.705s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'colcon_pkg'
+[1.706s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['colcon_meta']
+[1.706s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'colcon_meta'
+[1.706s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['ros']
+[1.706s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'ros'
+[1.706s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['cmake', 'python']
+[1.706s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'cmake'
+[1.707s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'python'
+[1.707s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['python_setup_py']
+[1.707s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'python_setup_py'
+[1.708s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['ignore', 'ignore_ament_install']
+[1.708s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'ignore'
+[1.708s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'ignore_ament_install'
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['colcon_pkg']
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'colcon_pkg'
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['colcon_meta']
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'colcon_meta'
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['ros']
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'ros'
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['cmake', 'python']
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'cmake'
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'python'
+[1.709s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['python_setup_py']
+[1.710s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'python_setup_py'
+[1.711s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['ignore', 'ignore_ament_install']
+[1.711s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'ignore'
+[1.711s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'ignore_ament_install'
+[1.711s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['colcon_pkg']
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'colcon_pkg'
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['colcon_meta']
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'colcon_meta'
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['ros']
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'ros'
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['cmake', 'python']
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'cmake'
+[1.712s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'python'
+[1.713s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['python_setup_py']
+[1.713s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'python_setup_py'
+[1.714s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['ignore', 'ignore_ament_install']
+[1.715s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'ignore'
+[1.715s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'ignore_ament_install'
+[1.715s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['colcon_pkg']
+[1.715s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'colcon_pkg'
+[1.715s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['colcon_meta']
+[1.715s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'colcon_meta'
+[1.716s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['ros']
+[1.716s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'ros'
+[1.716s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['cmake', 'python']
+[1.716s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'cmake'
+[1.716s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'python'
+[1.716s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['python_setup_py']
+[1.716s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'python_setup_py'
+[1.717s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['ignore', 'ignore_ament_install']
+[1.717s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'ignore'
+[1.718s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'ignore_ament_install'
+[1.718s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['colcon_pkg']
+[1.718s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'colcon_pkg'
+[1.718s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['colcon_meta']
+[1.718s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'colcon_meta'
+[1.718s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['ros']
+[1.718s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'ros'
+[1.719s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['cmake', 'python']
+[1.719s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'cmake'
+[1.719s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'python'
+[1.719s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['python_setup_py']
+[1.719s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'python_setup_py'
+[1.721s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['ignore', 'ignore_ament_install']
+[1.721s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'ignore'
+[1.721s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'ignore_ament_install'
+[1.722s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['colcon_pkg']
+[1.722s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'colcon_pkg'
+[1.722s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['colcon_meta']
+[1.722s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'colcon_meta'
+[1.722s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['ros']
+[1.723s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'ros'
+[1.723s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['cmake', 'python']
+[1.723s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'cmake'
+[1.723s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'python'
+[1.723s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['python_setup_py']
+[1.723s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'python_setup_py'
+[1.724s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['ignore', 'ignore_ament_install']
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'ignore'
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'ignore_ament_install'
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['colcon_pkg']
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'colcon_pkg'
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['colcon_meta']
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'colcon_meta'
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['ros']
+[1.725s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'ros'
+[1.726s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['cmake', 'python']
+[1.726s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'cmake'
+[1.726s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'python'
+[1.726s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['python_setup_py']
+[1.726s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'python_setup_py'
+[1.728s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['ignore', 'ignore_ament_install']
+[1.728s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'ignore'
+[1.729s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'ignore_ament_install'
+[1.729s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['colcon_pkg']
+[1.729s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'colcon_pkg'
+[1.729s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['colcon_meta']
+[1.729s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'colcon_meta'
+[1.729s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['ros']
+[1.729s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'ros'
+[1.730s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['cmake', 'python']
+[1.730s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'cmake'
+[1.730s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'python'
+[1.730s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['python_setup_py']
+[1.730s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'python_setup_py'
+[1.732s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['ignore', 'ignore_ament_install']
+[1.732s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'ignore'
+[1.732s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'ignore_ament_install'
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['colcon_pkg']
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'colcon_pkg'
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['colcon_meta']
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'colcon_meta'
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['ros']
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'ros'
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['cmake', 'python']
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'cmake'
+[1.733s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'python'
+[1.734s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['python_setup_py']
+[1.734s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'python_setup_py'
+[1.735s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['ignore', 'ignore_ament_install']
+[1.735s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'ignore'
+[1.735s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'ignore_ament_install'
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['colcon_pkg']
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'colcon_pkg'
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['colcon_meta']
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'colcon_meta'
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['ros']
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'ros'
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['cmake', 'python']
+[1.736s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'cmake'
+[1.737s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'python'
+[1.737s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['python_setup_py']
+[1.737s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'python_setup_py'
+[1.738s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['ignore', 'ignore_ament_install']
+[1.738s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'ignore'
+[1.739s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'ignore_ament_install'
+[1.739s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['colcon_pkg']
+[1.739s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'colcon_pkg'
+[1.739s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['colcon_meta']
+[1.739s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'colcon_meta'
+[1.739s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['ros']
+[1.739s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'ros'
+[1.740s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['cmake', 'python']
+[1.740s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'cmake'
+[1.740s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'python'
+[1.740s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['python_setup_py']
+[1.740s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'python_setup_py'
+[1.741s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['ignore', 'ignore_ament_install']
+[1.741s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'ignore'
+[1.742s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'ignore_ament_install'
+[1.742s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['colcon_pkg']
+[1.742s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'colcon_pkg'
+[1.742s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['colcon_meta']
+[1.742s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'colcon_meta'
+[1.742s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['ros']
+[1.742s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'ros'
+[1.743s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['cmake', 'python']
+[1.743s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'cmake'
+[1.743s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'python'
+[1.743s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['python_setup_py']
+[1.743s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'python_setup_py'
+[1.744s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['ignore', 'ignore_ament_install']
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'ignore'
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'ignore_ament_install'
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['colcon_pkg']
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'colcon_pkg'
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['colcon_meta']
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'colcon_meta'
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['ros']
+[1.745s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'ros'
+[1.746s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['cmake', 'python']
+[1.746s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'cmake'
+[1.746s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'python'
+[1.746s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['python_setup_py']
+[1.746s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'python_setup_py'
+[1.748s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['ignore', 'ignore_ament_install']
+[1.749s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'ignore'
+[1.749s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'ignore_ament_install'
+[1.749s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['colcon_pkg']
+[1.749s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'colcon_pkg'
+[1.749s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['colcon_meta']
+[1.749s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'colcon_meta'
+[1.750s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['ros']
+[1.750s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'ros'
+[1.750s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['cmake', 'python']
+[1.750s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'cmake'
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'python'
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['python_setup_py']
+[1.751s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'python_setup_py'
+[1.752s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['ignore', 'ignore_ament_install']
+[1.752s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'ignore'
+[1.753s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'ignore_ament_install'
+[1.753s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['colcon_pkg']
+[1.753s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'colcon_pkg'
+[1.753s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['colcon_meta']
+[1.753s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'colcon_meta'
+[1.753s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['ros']
+[1.753s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'ros'
+[1.754s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['cmake', 'python']
+[1.754s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'cmake'
+[1.754s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'python'
+[1.754s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['python_setup_py']
+[1.754s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'python_setup_py'
+[1.755s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['ignore', 'ignore_ament_install']
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'ignore'
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'ignore_ament_install'
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['colcon_pkg']
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'colcon_pkg'
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['colcon_meta']
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'colcon_meta'
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['ros']
+[1.756s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'ros'
+[1.757s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['cmake', 'python']
+[1.757s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'cmake'
+[1.757s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'python'
+[1.757s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['python_setup_py']
+[1.757s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'python_setup_py'
+[1.758s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['ignore', 'ignore_ament_install']
+[1.758s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'ignore'
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'ignore_ament_install'
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['colcon_pkg']
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'colcon_pkg'
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['colcon_meta']
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'colcon_meta'
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['ros']
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'ros'
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['cmake', 'python']
+[1.759s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'cmake'
+[1.760s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'python'
+[1.760s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['python_setup_py']
+[1.760s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'python_setup_py'
+[1.760s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.761s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.761s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.761s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.761s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.864s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.868s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.869s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.869s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.869s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.869s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.417s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[2.418s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.418s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.418s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.425s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[2.425s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.443s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.444s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sivuiii/whoami/install/local_setup.sh'
+[2.447s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sivuiii/whoami/install/_local_setup_util_sh.py'
+[2.451s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sivuiii/whoami/install/setup.sh'
+[2.465s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sivuiii/whoami/install/local_setup.bash'
+[2.467s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sivuiii/whoami/install/setup.bash'
+[2.470s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sivuiii/whoami/install/local_setup.zsh'
+[2.472s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sivuiii/whoami/install/setup.zsh'

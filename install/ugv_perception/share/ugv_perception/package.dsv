@@ -1,0 +1,6 @@
+source;share/ugv_perception/hook/cmake_prefix_path.dsv
+source;share/ugv_perception/hook/cmake_prefix_path.sh
+source;share/ugv_perception/local_setup.bash
+source;share/ugv_perception/local_setup.dsv
+source;share/ugv_perception/local_setup.sh
+source;share/ugv_perception/local_setup.zsh

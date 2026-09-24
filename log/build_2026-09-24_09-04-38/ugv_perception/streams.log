@@ -1,0 +1,42 @@
+[0.137s] Invoking command in '/home/sivuiii/whoami/build/ugv_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_perception -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_perception
+[1.471s] -- The C compiler identification is GNU 13.3.0
+[6.318s] -- The CXX compiler identification is GNU 13.3.0
+[11.020s] -- Detecting C compiler ABI info
+[12.725s] -- Detecting C compiler ABI info - done
+[12.762s] -- Check for working C compiler: /usr/bin/cc - skipped
+[12.762s] -- Detecting C compile features
+[12.764s] -- Detecting C compile features - done
+[13.429s] -- Detecting CXX compiler ABI info
+[15.063s] -- Detecting CXX compiler ABI info - done
+[15.100s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[15.101s] -- Detecting CXX compile features
+[15.103s] -- Detecting CXX compile features - done
+[15.163s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[15.825s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[16.414s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[16.928s] -- Added test 'lint_cmake' to check CMake code style
+[16.939s] -- Added test 'xmllint' to check XML markup files
+[16.951s] -- Configuring done (16.7s)
+[16.987s] -- Generating done (0.0s)
+[16.998s] -- Build files have been written to: /home/sivuiii/whoami/build/ugv_perception
+[17.029s] Invoked command in '/home/sivuiii/whoami/build/ugv_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_perception -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_perception
+[17.036s] Invoking command in '/home/sivuiii/whoami/build/ugv_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_perception -- -j16 -l16
+[17.204s] Invoked command in '/home/sivuiii/whoami/build/ugv_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_perception -- -j16 -l16
+[17.246s] Invoking command in '/home/sivuiii/whoami/build/ugv_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_perception
+[17.278s] -- Install configuration: ""
+[17.293s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ament_index/resource_index/package_run_dependencies/ugv_perception
+[17.298s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ament_index/resource_index/parent_prefix_path/ugv_perception
+[17.303s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/ament_prefix_path.sh
+[17.304s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/ament_prefix_path.dsv
+[17.305s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/path.sh
+[17.306s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/path.dsv
+[17.306s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.bash
+[17.308s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.sh
+[17.309s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.zsh
+[17.311s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.dsv
+[17.311s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.dsv
+[17.312s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ament_index/resource_index/packages/ugv_perception
+[17.315s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/cmake/ugv_perceptionConfig.cmake
+[17.317s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/cmake/ugv_perceptionConfig-version.cmake
+[17.317s] -- Installing: /home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.xml
+[17.328s] Invoked command in '/home/sivuiii/whoami/build/ugv_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_perception

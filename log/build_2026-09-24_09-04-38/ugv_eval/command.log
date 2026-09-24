@@ -1,0 +1,6 @@
+Invoking command in '/home/sivuiii/whoami/build/ugv_eval': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_eval -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_eval
+Invoked command in '/home/sivuiii/whoami/build/ugv_eval' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_eval -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_eval
+Invoking command in '/home/sivuiii/whoami/build/ugv_eval': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_eval -- -j16 -l16
+Invoked command in '/home/sivuiii/whoami/build/ugv_eval' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_eval -- -j16 -l16
+Invoking command in '/home/sivuiii/whoami/build/ugv_eval': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_eval
+Invoked command in '/home/sivuiii/whoami/build/ugv_eval' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_eval

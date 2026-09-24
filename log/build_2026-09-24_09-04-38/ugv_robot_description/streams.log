@@ -1,0 +1,42 @@
+[0.145s] Invoking command in '/home/sivuiii/whoami/build/ugv_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_robot_description -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_robot_description
+[1.458s] -- The C compiler identification is GNU 13.3.0
+[6.857s] -- The CXX compiler identification is GNU 13.3.0
+[11.614s] -- Detecting C compiler ABI info
+[13.176s] -- Detecting C compiler ABI info - done
+[13.222s] -- Check for working C compiler: /usr/bin/cc - skipped
+[13.223s] -- Detecting C compile features
+[13.224s] -- Detecting C compile features - done
+[13.846s] -- Detecting CXX compiler ABI info
+[15.442s] -- Detecting CXX compiler ABI info - done
+[15.487s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[15.487s] -- Detecting CXX compile features
+[15.490s] -- Detecting CXX compile features - done
+[15.501s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[16.130s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[16.598s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[17.075s] -- Added test 'lint_cmake' to check CMake code style
+[17.083s] -- Added test 'xmllint' to check XML markup files
+[17.094s] -- Configuring done (16.9s)
+[17.129s] -- Generating done (0.0s)
+[17.139s] -- Build files have been written to: /home/sivuiii/whoami/build/ugv_robot_description
+[17.158s] Invoked command in '/home/sivuiii/whoami/build/ugv_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_robot_description -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_robot_description
+[17.162s] Invoking command in '/home/sivuiii/whoami/build/ugv_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_robot_description -- -j16 -l16
+[17.420s] Invoked command in '/home/sivuiii/whoami/build/ugv_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_robot_description -- -j16 -l16
+[17.425s] Invoking command in '/home/sivuiii/whoami/build/ugv_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_robot_description
+[17.457s] -- Install configuration: ""
+[17.467s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ament_index/resource_index/package_run_dependencies/ugv_robot_description
+[17.470s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ament_index/resource_index/parent_prefix_path/ugv_robot_description
+[17.476s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/environment/ament_prefix_path.sh
+[17.477s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/environment/ament_prefix_path.dsv
+[17.479s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/environment/path.sh
+[17.480s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/environment/path.dsv
+[17.481s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/local_setup.bash
+[17.482s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/local_setup.sh
+[17.484s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/local_setup.zsh
+[17.486s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/local_setup.dsv
+[17.488s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.dsv
+[17.489s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ament_index/resource_index/packages/ugv_robot_description
+[17.490s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/cmake/ugv_robot_descriptionConfig.cmake
+[17.492s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/cmake/ugv_robot_descriptionConfig-version.cmake
+[17.493s] -- Installing: /home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.xml
+[17.530s] Invoked command in '/home/sivuiii/whoami/build/ugv_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_robot_description

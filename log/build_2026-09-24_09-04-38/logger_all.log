@@ -1,0 +1,764 @@
+[1.011s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.012s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x704e584d1c40>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x704e58655df0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x704e58655df0>>)
+[1.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.244s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.244s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/sivuiii/whoami'
+[1.245s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.245s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.249s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.250s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.250s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.250s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.250s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.250s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.251s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.324s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.327s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.328s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.329s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.329s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.329s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.329s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.329s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.329s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.330s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extensions ['ignore', 'ignore_ament_install']
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extension 'ignore'
+[1.331s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extension 'ignore_ament_install'
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extensions ['colcon_pkg']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extension 'colcon_pkg'
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extensions ['colcon_meta']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extension 'colcon_meta'
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extensions ['ros']
+[1.332s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_bringup) by extension 'ros'
+[1.341s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ugv_bringup' with type 'ros.ament_cmake' and name 'ugv_bringup'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extensions ['ignore', 'ignore_ament_install']
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extension 'ignore'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extension 'ignore_ament_install'
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extensions ['colcon_pkg']
+[1.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extension 'colcon_pkg'
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extensions ['colcon_meta']
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extension 'colcon_meta'
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extensions ['ros']
+[1.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_eval) by extension 'ros'
+[1.344s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ugv_eval' with type 'ros.ament_cmake' and name 'ugv_eval'
+[1.344s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extensions ['ignore', 'ignore_ament_install']
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extension 'ignore'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extension 'ignore_ament_install'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extensions ['colcon_pkg']
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extension 'colcon_pkg'
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extensions ['colcon_meta']
+[1.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extension 'colcon_meta'
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extensions ['ros']
+[1.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_localization) by extension 'ros'
+[1.347s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ugv_localization' with type 'ros.ament_cmake' and name 'ugv_localization'
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extensions ['ignore', 'ignore_ament_install']
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extension 'ignore'
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extension 'ignore_ament_install'
+[1.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extensions ['colcon_pkg']
+[1.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extension 'colcon_pkg'
+[1.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extensions ['colcon_meta']
+[1.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extension 'colcon_meta'
+[1.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extensions ['ros']
+[1.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_navigation) by extension 'ros'
+[1.349s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ugv_navigation' with type 'ros.ament_cmake' and name 'ugv_navigation'
+[1.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extensions ['ignore', 'ignore_ament_install']
+[1.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extension 'ignore'
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extension 'ignore_ament_install'
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extensions ['colcon_pkg']
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extension 'colcon_pkg'
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extensions ['colcon_meta']
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extension 'colcon_meta'
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extensions ['ros']
+[1.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_perception) by extension 'ros'
+[1.353s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ugv_perception' with type 'ros.ament_cmake' and name 'ugv_perception'
+[1.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extensions ['ignore', 'ignore_ament_install']
+[1.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extension 'ignore'
+[1.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extension 'ignore_ament_install'
+[1.354s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extensions ['colcon_pkg']
+[1.355s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extension 'colcon_pkg'
+[1.355s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extensions ['colcon_meta']
+[1.355s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extension 'colcon_meta'
+[1.355s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extensions ['ros']
+[1.355s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_robot_description) by extension 'ros'
+[1.356s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ugv_robot_description' with type 'ros.ament_cmake' and name 'ugv_robot_description'
+[1.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extensions ['ignore', 'ignore_ament_install']
+[1.356s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extension 'ignore'
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extension 'ignore_ament_install'
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extensions ['colcon_pkg']
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extension 'colcon_pkg'
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extensions ['colcon_meta']
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extension 'colcon_meta'
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extensions ['ros']
+[1.357s] Level 1:colcon.colcon_core.package_identification:_identify(src/ugv_safety) by extension 'ros'
+[1.358s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ugv_safety' with type 'ros.ament_cmake' and name 'ugv_safety'
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['ignore', 'ignore_ament_install']
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'ignore'
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'ignore_ament_install'
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['colcon_pkg']
+[1.360s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'colcon_pkg'
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['colcon_meta']
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'colcon_meta'
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['ros']
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'ros'
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['cmake', 'python']
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'cmake'
+[1.361s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'python'
+[1.362s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extensions ['python_setup_py']
+[1.362s] Level 1:colcon.colcon_core.package_identification:_identify(turing) by extension 'python_setup_py'
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['ignore', 'ignore_ament_install']
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'ignore'
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'ignore_ament_install'
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['colcon_pkg']
+[1.363s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'colcon_pkg'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['colcon_meta']
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'colcon_meta'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['ros']
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'ros'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['cmake', 'python']
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'cmake'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'python'
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extensions ['python_setup_py']
+[1.364s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config) by extension 'python_setup_py'
+[1.365s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['ignore', 'ignore_ament_install']
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'ignore'
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'ignore_ament_install'
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['colcon_pkg']
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'colcon_pkg'
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['colcon_meta']
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'colcon_meta'
+[1.366s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['ros']
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'ros'
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['cmake', 'python']
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'cmake'
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'python'
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extensions ['python_setup_py']
+[1.367s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/adapters) by extension 'python_setup_py'
+[1.368s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['ignore', 'ignore_ament_install']
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'ignore'
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'ignore_ament_install'
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['colcon_pkg']
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'colcon_pkg'
+[1.369s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['colcon_meta']
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'colcon_meta'
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['ros']
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'ros'
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['cmake', 'python']
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'cmake'
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'python'
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extensions ['python_setup_py']
+[1.370s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/ontologies) by extension 'python_setup_py'
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['ignore', 'ignore_ament_install']
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'ignore'
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'ignore_ament_install'
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['colcon_pkg']
+[1.372s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'colcon_pkg'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['colcon_meta']
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'colcon_meta'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['ros']
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'ros'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['cmake', 'python']
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'cmake'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'python'
+[1.373s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extensions ['python_setup_py']
+[1.374s] Level 1:colcon.colcon_core.package_identification:_identify(turing/config/perception) by extension 'python_setup_py'
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['ignore', 'ignore_ament_install']
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'ignore'
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'ignore_ament_install'
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['colcon_pkg']
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'colcon_pkg'
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['colcon_meta']
+[1.375s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'colcon_meta'
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['ros']
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'ros'
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['cmake', 'python']
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'cmake'
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'python'
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extensions ['python_setup_py']
+[1.376s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src) by extension 'python_setup_py'
+[1.377s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['ignore', 'ignore_ament_install']
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'ignore'
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'ignore_ament_install'
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['colcon_pkg']
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'colcon_pkg'
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['colcon_meta']
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'colcon_meta'
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['ros']
+[1.378s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'ros'
+[1.379s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['cmake', 'python']
+[1.379s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'cmake'
+[1.379s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'python'
+[1.379s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extensions ['python_setup_py']
+[1.379s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception) by extension 'python_setup_py'
+[1.380s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['ignore', 'ignore_ament_install']
+[1.380s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'ignore'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'ignore_ament_install'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['colcon_pkg']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'colcon_pkg'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['colcon_meta']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'colcon_meta'
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['ros']
+[1.381s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'ros'
+[1.382s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['cmake', 'python']
+[1.382s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'cmake'
+[1.382s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'python'
+[1.382s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extensions ['python_setup_py']
+[1.382s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/adapter) by extension 'python_setup_py'
+[1.383s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['ignore', 'ignore_ament_install']
+[1.383s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'ignore'
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'ignore_ament_install'
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['colcon_pkg']
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'colcon_pkg'
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['colcon_meta']
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'colcon_meta'
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['ros']
+[1.384s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'ros'
+[1.385s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['cmake', 'python']
+[1.385s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'cmake'
+[1.385s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'python'
+[1.385s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extensions ['python_setup_py']
+[1.385s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/backend) by extension 'python_setup_py'
+[1.386s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['ignore', 'ignore_ament_install']
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'ignore'
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'ignore_ament_install'
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['colcon_pkg']
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'colcon_pkg'
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['colcon_meta']
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'colcon_meta'
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['ros']
+[1.387s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'ros'
+[1.388s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['cmake', 'python']
+[1.388s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'cmake'
+[1.388s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'python'
+[1.388s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extensions ['python_setup_py']
+[1.388s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/compose) by extension 'python_setup_py'
+[1.389s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['ignore', 'ignore_ament_install']
+[1.389s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'ignore'
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'ignore_ament_install'
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['colcon_pkg']
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'colcon_pkg'
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['colcon_meta']
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'colcon_meta'
+[1.390s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['ros']
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'ros'
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['cmake', 'python']
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'cmake'
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'python'
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extensions ['python_setup_py']
+[1.391s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/confidence) by extension 'python_setup_py'
+[1.392s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['ignore', 'ignore_ament_install']
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'ignore'
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'ignore_ament_install'
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['colcon_pkg']
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'colcon_pkg'
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['colcon_meta']
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'colcon_meta'
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['ros']
+[1.393s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'ros'
+[1.394s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['cmake', 'python']
+[1.394s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'cmake'
+[1.394s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'python'
+[1.394s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extensions ['python_setup_py']
+[1.394s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/freshness) by extension 'python_setup_py'
+[1.395s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['ignore', 'ignore_ament_install']
+[1.395s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'ignore'
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'ignore_ament_install'
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['colcon_pkg']
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'colcon_pkg'
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['colcon_meta']
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'colcon_meta'
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['ros']
+[1.396s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'ros'
+[1.397s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['cmake', 'python']
+[1.397s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'cmake'
+[1.397s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'python'
+[1.397s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extensions ['python_setup_py']
+[1.397s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/ingest) by extension 'python_setup_py'
+[1.398s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['ignore', 'ignore_ament_install']
+[1.398s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'ignore'
+[1.398s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'ignore_ament_install'
+[1.398s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['colcon_pkg']
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'colcon_pkg'
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['colcon_meta']
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'colcon_meta'
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['ros']
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'ros'
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['cmake', 'python']
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'cmake'
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'python'
+[1.399s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extensions ['python_setup_py']
+[1.400s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/node) by extension 'python_setup_py'
+[1.400s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['ignore', 'ignore_ament_install']
+[1.401s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'ignore'
+[1.401s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'ignore_ament_install'
+[1.401s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['colcon_pkg']
+[1.401s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'colcon_pkg'
+[1.401s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['colcon_meta']
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'colcon_meta'
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['ros']
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'ros'
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['cmake', 'python']
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'cmake'
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'python'
+[1.402s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extensions ['python_setup_py']
+[1.403s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/port) by extension 'python_setup_py'
+[1.404s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['ignore', 'ignore_ament_install']
+[1.404s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'ignore'
+[1.404s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'ignore_ament_install'
+[1.404s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['colcon_pkg']
+[1.404s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'colcon_pkg'
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['colcon_meta']
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'colcon_meta'
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['ros']
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'ros'
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['cmake', 'python']
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'cmake'
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'python'
+[1.405s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extensions ['python_setup_py']
+[1.406s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/remap) by extension 'python_setup_py'
+[1.406s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['ignore', 'ignore_ament_install']
+[1.407s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'ignore'
+[1.407s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'ignore_ament_install'
+[1.407s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['colcon_pkg']
+[1.407s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'colcon_pkg'
+[1.407s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['colcon_meta']
+[1.407s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'colcon_meta'
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['ros']
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'ros'
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['cmake', 'python']
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'cmake'
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'python'
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extensions ['python_setup_py']
+[1.408s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests) by extension 'python_setup_py'
+[1.409s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['ignore', 'ignore_ament_install']
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'ignore'
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'ignore_ament_install'
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['colcon_pkg']
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'colcon_pkg'
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['colcon_meta']
+[1.410s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'colcon_meta'
+[1.411s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['ros']
+[1.411s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'ros'
+[1.411s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['cmake', 'python']
+[1.411s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'cmake'
+[1.411s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'python'
+[1.412s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extensions ['python_setup_py']
+[1.412s] Level 1:colcon.colcon_core.package_identification:_identify(turing/src/ugv_perception/tests/fixtures) by extension 'python_setup_py'
+[1.413s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['ignore', 'ignore_ament_install']
+[1.413s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'ignore'
+[1.413s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'ignore_ament_install'
+[1.413s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['colcon_pkg']
+[1.413s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'colcon_pkg'
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['colcon_meta']
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'colcon_meta'
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['ros']
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'ros'
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['cmake', 'python']
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'cmake'
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'python'
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extensions ['python_setup_py']
+[1.414s] Level 1:colcon.colcon_core.package_identification:_identify(turing/subarchs) by extension 'python_setup_py'
+[1.415s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['ignore', 'ignore_ament_install']
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'ignore'
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'ignore_ament_install'
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['colcon_pkg']
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'colcon_pkg'
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['colcon_meta']
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'colcon_meta'
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['ros']
+[1.416s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'ros'
+[1.417s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['cmake', 'python']
+[1.417s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'cmake'
+[1.417s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'python'
+[1.417s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extensions ['python_setup_py']
+[1.417s] Level 1:colcon.colcon_core.package_identification:_identify(turing/weights) by extension 'python_setup_py'
+[1.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.418s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'cmake_args' from command line to 'None'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'cmake_target' from command line to 'None'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[1.503s] Level 5:colcon.colcon_core.verb:set package 'ugv_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.503s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sivuiii/whoami/build/ugv_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sivuiii/whoami/install/ugv_bringup', 'merge_install': False, 'path': '/home/sivuiii/whoami/src/ugv_bringup', 'symlink_install': False, 'test_result_base': None}
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'cmake_args' from command line to 'None'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'cmake_target' from command line to 'None'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'cmake_clean_cache' from command line to 'False'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'cmake_clean_first' from command line to 'False'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'cmake_force_configure' from command line to 'False'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'ament_cmake_args' from command line to 'None'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'catkin_cmake_args' from command line to 'None'
+[1.504s] Level 5:colcon.colcon_core.verb:set package 'ugv_eval' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.504s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_eval' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sivuiii/whoami/build/ugv_eval', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sivuiii/whoami/install/ugv_eval', 'merge_install': False, 'path': '/home/sivuiii/whoami/src/ugv_eval', 'symlink_install': False, 'test_result_base': None}
+[1.505s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'cmake_args' from command line to 'None'
+[1.505s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'cmake_target' from command line to 'None'
+[1.505s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.505s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'cmake_clean_cache' from command line to 'False'
+[1.505s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'cmake_clean_first' from command line to 'False'
+[1.506s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'cmake_force_configure' from command line to 'False'
+[1.506s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'ament_cmake_args' from command line to 'None'
+[1.506s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'catkin_cmake_args' from command line to 'None'
+[1.506s] Level 5:colcon.colcon_core.verb:set package 'ugv_localization' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.506s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_localization' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sivuiii/whoami/build/ugv_localization', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sivuiii/whoami/install/ugv_localization', 'merge_install': False, 'path': '/home/sivuiii/whoami/src/ugv_localization', 'symlink_install': False, 'test_result_base': None}
+[1.506s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'cmake_args' from command line to 'None'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'cmake_target' from command line to 'None'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[1.507s] Level 5:colcon.colcon_core.verb:set package 'ugv_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.507s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sivuiii/whoami/build/ugv_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sivuiii/whoami/install/ugv_navigation', 'merge_install': False, 'path': '/home/sivuiii/whoami/src/ugv_navigation', 'symlink_install': False, 'test_result_base': None}
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'cmake_args' from command line to 'None'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'cmake_target' from command line to 'None'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'cmake_clean_cache' from command line to 'False'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'cmake_clean_first' from command line to 'False'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'cmake_force_configure' from command line to 'False'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'ament_cmake_args' from command line to 'None'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[1.508s] Level 5:colcon.colcon_core.verb:set package 'ugv_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.508s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sivuiii/whoami/build/ugv_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sivuiii/whoami/install/ugv_perception', 'merge_install': False, 'path': '/home/sivuiii/whoami/src/ugv_perception', 'symlink_install': False, 'test_result_base': None}
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'cmake_args' from command line to 'None'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'cmake_target' from command line to 'None'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'cmake_clean_first' from command line to 'False'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'cmake_force_configure' from command line to 'False'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'ament_cmake_args' from command line to 'None'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[1.509s] Level 5:colcon.colcon_core.verb:set package 'ugv_robot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.509s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_robot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sivuiii/whoami/build/ugv_robot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sivuiii/whoami/install/ugv_robot_description', 'merge_install': False, 'path': '/home/sivuiii/whoami/src/ugv_robot_description', 'symlink_install': False, 'test_result_base': None}
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'cmake_args' from command line to 'None'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'cmake_target' from command line to 'None'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'cmake_clean_cache' from command line to 'False'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'cmake_clean_first' from command line to 'False'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'cmake_force_configure' from command line to 'False'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'ament_cmake_args' from command line to 'None'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'catkin_cmake_args' from command line to 'None'
+[1.510s] Level 5:colcon.colcon_core.verb:set package 'ugv_safety' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.511s] DEBUG:colcon.colcon_core.verb:Building package 'ugv_safety' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sivuiii/whoami/build/ugv_safety', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sivuiii/whoami/install/ugv_safety', 'merge_install': False, 'path': '/home/sivuiii/whoami/src/ugv_safety', 'symlink_install': False, 'test_result_base': None}
+[1.511s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.514s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.515s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sivuiii/whoami/src/ugv_bringup' with build type 'ament_cmake'
+[1.515s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sivuiii/whoami/src/ugv_bringup'
+[1.533s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.533s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.558s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sivuiii/whoami/src/ugv_eval' with build type 'ament_cmake'
+[1.558s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sivuiii/whoami/src/ugv_eval'
+[1.558s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.572s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sivuiii/whoami/src/ugv_localization' with build type 'ament_cmake'
+[1.572s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sivuiii/whoami/src/ugv_localization'
+[1.573s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.587s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sivuiii/whoami/src/ugv_navigation' with build type 'ament_cmake'
+[1.587s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sivuiii/whoami/src/ugv_navigation'
+[1.588s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.599s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sivuiii/whoami/src/ugv_perception' with build type 'ament_cmake'
+[1.600s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sivuiii/whoami/src/ugv_perception'
+[1.600s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.613s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sivuiii/whoami/src/ugv_robot_description' with build type 'ament_cmake'
+[1.614s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sivuiii/whoami/src/ugv_robot_description'
+[1.615s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.627s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/sivuiii/whoami/src/ugv_safety' with build type 'ament_cmake'
+[1.627s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/sivuiii/whoami/src/ugv_safety'
+[1.628s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.666s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_bringup -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_bringup
+[1.687s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_eval': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_eval -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_eval
+[1.703s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_localization -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_localization
+[1.721s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_navigation -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_navigation
+[1.738s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_perception -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_perception
+[1.759s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_robot_description -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_robot_description
+[1.806s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_safety -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_safety
+[18.630s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_perception -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_perception
+[18.638s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_perception -- -j16 -l16
+[18.717s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_safety -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_safety
+[18.721s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_safety -- -j16 -l16
+[18.772s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_robot_description -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_robot_description
+[18.776s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_robot_description -- -j16 -l16
+[18.805s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_perception -- -j16 -l16
+[18.847s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_perception': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_perception
+[18.855s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_eval' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_eval -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_eval
+[18.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_eval': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_eval -- -j16 -l16
+[18.891s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_safety -- -j16 -l16
+[18.893s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_safety': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_safety
+[18.927s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_perception)
+[18.929s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_perception' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_perception
+[18.972s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception' for CMake module files
+[18.973s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception' for CMake config files
+[18.975s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_perception', 'cmake_prefix_path')
+[18.975s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/hook/cmake_prefix_path.dsv'
+[18.981s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/hook/cmake_prefix_path.sh'
+[18.984s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/bin'
+[18.984s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/lib/pkgconfig/ugv_perception.pc'
+[18.991s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/lib/python3.12/site-packages'
+[18.992s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/bin'
+[18.993s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.dsv'
+[18.995s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.sh'
+[18.999s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.bash'
+[19.001s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.zsh'
+[19.005s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_perception/share/colcon-core/packages/ugv_perception)
+[19.010s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_perception)
+[19.010s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception' for CMake module files
+[19.011s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception' for CMake config files
+[19.012s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_perception', 'cmake_prefix_path')
+[19.012s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/hook/cmake_prefix_path.dsv'
+[19.014s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/hook/cmake_prefix_path.sh'
+[19.015s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/bin'
+[19.015s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/lib/pkgconfig/ugv_perception.pc'
+[19.016s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/lib/python3.12/site-packages'
+[19.017s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_perception/bin'
+[19.017s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.dsv'
+[19.019s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.sh'
+[19.020s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.bash'
+[19.022s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.zsh'
+[19.023s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_perception/share/colcon-core/packages/ugv_perception)
+[19.034s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_robot_description -- -j16 -l16
+[19.038s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_robot_description
+[19.040s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_eval' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_eval -- -j16 -l16
+[19.044s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_eval': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_eval
+[19.046s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_safety)
+[19.048s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety' for CMake module files
+[19.053s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_safety' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_safety
+[19.054s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety' for CMake config files
+[19.055s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_safety', 'cmake_prefix_path')
+[19.056s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/hook/cmake_prefix_path.dsv'
+[19.060s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/hook/cmake_prefix_path.sh'
+[19.061s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/bin'
+[19.062s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/lib/pkgconfig/ugv_safety.pc'
+[19.062s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/lib/python3.12/site-packages'
+[19.063s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/bin'
+[19.064s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.dsv'
+[19.065s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.sh'
+[19.067s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.bash'
+[19.068s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.zsh'
+[19.070s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_safety/share/colcon-core/packages/ugv_safety)
+[19.075s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_safety)
+[19.076s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety' for CMake module files
+[19.077s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety' for CMake config files
+[19.078s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_safety', 'cmake_prefix_path')
+[19.078s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/hook/cmake_prefix_path.dsv'
+[19.086s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/hook/cmake_prefix_path.sh'
+[19.096s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/bin'
+[19.096s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/lib/pkgconfig/ugv_safety.pc'
+[19.107s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/lib/python3.12/site-packages'
+[19.108s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_safety/bin'
+[19.108s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.dsv'
+[19.111s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.sh'
+[19.112s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.bash'
+[19.113s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_safety/share/ugv_safety/package.zsh'
+[19.115s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_safety/share/colcon-core/packages/ugv_safety)
+[19.135s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_robot_description)
+[19.136s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description' for CMake module files
+[19.144s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_robot_description
+[19.145s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description' for CMake config files
+[19.146s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_robot_description', 'cmake_prefix_path')
+[19.146s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/hook/cmake_prefix_path.dsv'
+[19.149s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/hook/cmake_prefix_path.sh'
+[19.151s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/bin'
+[19.151s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/lib/pkgconfig/ugv_robot_description.pc'
+[19.151s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/lib/python3.12/site-packages'
+[19.152s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/bin'
+[19.153s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.dsv'
+[19.154s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.sh'
+[19.155s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.bash'
+[19.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.zsh'
+[19.157s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_robot_description/share/colcon-core/packages/ugv_robot_description)
+[19.162s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_robot_description)
+[19.162s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description' for CMake module files
+[19.164s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description' for CMake config files
+[19.164s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_robot_description', 'cmake_prefix_path')
+[19.165s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/hook/cmake_prefix_path.dsv'
+[19.166s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/hook/cmake_prefix_path.sh'
+[19.167s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/bin'
+[19.168s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/lib/pkgconfig/ugv_robot_description.pc'
+[19.168s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/lib/python3.12/site-packages'
+[19.169s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_robot_description/bin'
+[19.169s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.dsv'
+[19.171s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.sh'
+[19.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.bash'
+[19.176s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_robot_description/share/ugv_robot_description/package.zsh'
+[19.177s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_robot_description/share/colcon-core/packages/ugv_robot_description)
+[19.181s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_eval)
+[19.181s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval' for CMake module files
+[19.187s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval' for CMake config files
+[19.188s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_eval' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_eval
+[19.189s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_eval', 'cmake_prefix_path')
+[19.190s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/hook/cmake_prefix_path.dsv'
+[19.194s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/hook/cmake_prefix_path.sh'
+[19.195s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/bin'
+[19.195s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/lib/pkgconfig/ugv_eval.pc'
+[19.196s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/lib/python3.12/site-packages'
+[19.197s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/bin'
+[19.197s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.dsv'
+[19.199s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.sh'
+[19.200s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.bash'
+[19.201s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.zsh'
+[19.202s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_eval/share/colcon-core/packages/ugv_eval)
+[19.206s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_eval)
+[19.207s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval' for CMake module files
+[19.208s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval' for CMake config files
+[19.209s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_eval', 'cmake_prefix_path')
+[19.209s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/hook/cmake_prefix_path.dsv'
+[19.211s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/hook/cmake_prefix_path.sh'
+[19.212s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/bin'
+[19.213s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/lib/pkgconfig/ugv_eval.pc'
+[19.213s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/lib/python3.12/site-packages'
+[19.214s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_eval/bin'
+[19.215s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.dsv'
+[19.216s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.sh'
+[19.218s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.bash'
+[19.219s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_eval/share/ugv_eval/package.zsh'
+[19.220s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_eval/share/colcon-core/packages/ugv_eval)
+[19.227s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_navigation -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_navigation
+[19.230s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_navigation -- -j16 -l16
+[19.369s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_navigation -- -j16 -l16
+[19.373s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_navigation
+[19.430s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_navigation)
+[19.432s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_navigation
+[19.432s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation' for CMake module files
+[19.434s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation' for CMake config files
+[19.435s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_navigation', 'cmake_prefix_path')
+[19.436s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/hook/cmake_prefix_path.dsv'
+[19.438s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/hook/cmake_prefix_path.sh'
+[19.440s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/bin'
+[19.440s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/lib/pkgconfig/ugv_navigation.pc'
+[19.441s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/lib/python3.12/site-packages'
+[19.442s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/bin'
+[19.443s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.dsv'
+[19.445s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.sh'
+[19.447s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.bash'
+[19.448s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.zsh'
+[19.449s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_navigation/share/colcon-core/packages/ugv_navigation)
+[19.453s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_navigation)
+[19.453s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation' for CMake module files
+[19.455s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation' for CMake config files
+[19.455s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_navigation', 'cmake_prefix_path')
+[19.456s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/hook/cmake_prefix_path.dsv'
+[19.456s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/hook/cmake_prefix_path.sh'
+[19.458s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/bin'
+[19.458s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/lib/pkgconfig/ugv_navigation.pc'
+[19.459s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/lib/python3.12/site-packages'
+[19.459s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_navigation/bin'
+[19.460s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.dsv'
+[19.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.sh'
+[19.463s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.bash'
+[19.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.zsh'
+[19.466s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_navigation/share/colcon-core/packages/ugv_navigation)
+[19.948s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_bringup -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_bringup
+[19.952s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_bringup -- -j16 -l16
+[20.087s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_bringup -- -j16 -l16
+[20.091s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_bringup
+[20.151s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_bringup)
+[20.152s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup' for CMake module files
+[20.154s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_bringup
+[20.155s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup' for CMake config files
+[20.156s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_bringup', 'cmake_prefix_path')
+[20.156s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/hook/cmake_prefix_path.dsv'
+[20.163s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/hook/cmake_prefix_path.sh'
+[20.165s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/bin'
+[20.165s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/lib/pkgconfig/ugv_bringup.pc'
+[20.165s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/lib/python3.12/site-packages'
+[20.167s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/bin'
+[20.167s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.dsv'
+[20.168s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.sh'
+[20.169s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.bash'
+[20.173s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.zsh'
+[20.174s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_bringup/share/colcon-core/packages/ugv_bringup)
+[20.179s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_bringup)
+[20.179s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup' for CMake module files
+[20.181s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup' for CMake config files
+[20.183s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_bringup', 'cmake_prefix_path')
+[20.183s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/hook/cmake_prefix_path.dsv'
+[20.185s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/hook/cmake_prefix_path.sh'
+[20.187s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/bin'
+[20.187s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/lib/pkgconfig/ugv_bringup.pc'
+[20.188s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/lib/python3.12/site-packages'
+[20.189s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_bringup/bin'
+[20.190s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.dsv'
+[20.191s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.sh'
+[20.193s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.bash'
+[20.194s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_bringup/share/ugv_bringup/package.zsh'
+[20.195s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_bringup/share/colcon-core/packages/ugv_bringup)
+[20.203s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_localization -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_localization
+[20.209s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_localization -- -j16 -l16
+[20.338s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_localization -- -j16 -l16
+[20.342s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/sivuiii/whoami/build/ugv_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_localization
+[20.402s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_localization)
+[20.403s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization' for CMake module files
+[20.405s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/sivuiii/whoami/build/ugv_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_localization
+[20.406s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization' for CMake config files
+[20.407s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_localization', 'cmake_prefix_path')
+[20.407s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/hook/cmake_prefix_path.dsv'
+[20.410s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/hook/cmake_prefix_path.sh'
+[20.412s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/bin'
+[20.412s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/lib/pkgconfig/ugv_localization.pc'
+[20.412s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/lib/python3.12/site-packages'
+[20.414s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/bin'
+[20.414s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.dsv'
+[20.415s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.sh'
+[20.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.bash'
+[20.419s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.zsh'
+[20.420s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_localization/share/colcon-core/packages/ugv_localization)
+[20.425s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ugv_localization)
+[20.426s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization' for CMake module files
+[20.427s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization' for CMake config files
+[20.428s] Level 1:colcon.colcon_core.shell:create_environment_hook('ugv_localization', 'cmake_prefix_path')
+[20.428s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/hook/cmake_prefix_path.dsv'
+[20.429s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/hook/cmake_prefix_path.sh'
+[20.431s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/bin'
+[20.431s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/lib/pkgconfig/ugv_localization.pc'
+[20.432s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/lib/python3.12/site-packages'
+[20.432s] Level 1:colcon.colcon_core.environment:checking '/home/sivuiii/whoami/install/ugv_localization/bin'
+[20.433s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.dsv'
+[20.435s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.sh'
+[20.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.bash'
+[20.438s] INFO:colcon.colcon_core.shell:Creating package script '/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.zsh'
+[20.439s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/sivuiii/whoami/install/ugv_localization/share/colcon-core/packages/ugv_localization)
+[20.441s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[20.443s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[20.443s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[20.443s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[20.939s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[20.939s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[20.939s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[20.940s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[20.945s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[20.945s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[20.946s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sivuiii/whoami/install/local_setup.sh'
+[20.948s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/sivuiii/whoami/install/_local_setup_util_sh.py'
+[20.953s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sivuiii/whoami/install/setup.sh'
+[20.956s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sivuiii/whoami/install/local_setup.bash'
+[20.959s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sivuiii/whoami/install/setup.bash'
+[20.962s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/sivuiii/whoami/install/local_setup.zsh'
+[20.965s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/sivuiii/whoami/install/setup.zsh'

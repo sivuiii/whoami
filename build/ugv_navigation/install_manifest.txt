@@ -1,0 +1,15 @@
+/home/sivuiii/whoami/install/ugv_navigation/share/ament_index/resource_index/package_run_dependencies/ugv_navigation
+/home/sivuiii/whoami/install/ugv_navigation/share/ament_index/resource_index/parent_prefix_path/ugv_navigation
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/environment/ament_prefix_path.sh
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/environment/ament_prefix_path.dsv
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/environment/path.sh
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/environment/path.dsv
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/local_setup.bash
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/local_setup.sh
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/local_setup.zsh
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/local_setup.dsv
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.dsv
+/home/sivuiii/whoami/install/ugv_navigation/share/ament_index/resource_index/packages/ugv_navigation
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/cmake/ugv_navigationConfig.cmake
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/cmake/ugv_navigationConfig-version.cmake
+/home/sivuiii/whoami/install/ugv_navigation/share/ugv_navigation/package.xml

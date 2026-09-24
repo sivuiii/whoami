@@ -1,0 +1,15 @@
+/home/sivuiii/whoami/install/ugv_localization/share/ament_index/resource_index/package_run_dependencies/ugv_localization
+/home/sivuiii/whoami/install/ugv_localization/share/ament_index/resource_index/parent_prefix_path/ugv_localization
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/environment/ament_prefix_path.sh
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/environment/ament_prefix_path.dsv
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/environment/path.sh
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/environment/path.dsv
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/local_setup.bash
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/local_setup.sh
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/local_setup.zsh
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/local_setup.dsv
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.dsv
+/home/sivuiii/whoami/install/ugv_localization/share/ament_index/resource_index/packages/ugv_localization
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/cmake/ugv_localizationConfig.cmake
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/cmake/ugv_localizationConfig-version.cmake
+/home/sivuiii/whoami/install/ugv_localization/share/ugv_localization/package.xml

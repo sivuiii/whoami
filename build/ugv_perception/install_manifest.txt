@@ -1,0 +1,15 @@
+/home/sivuiii/whoami/install/ugv_perception/share/ament_index/resource_index/package_run_dependencies/ugv_perception
+/home/sivuiii/whoami/install/ugv_perception/share/ament_index/resource_index/parent_prefix_path/ugv_perception
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/ament_prefix_path.sh
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/ament_prefix_path.dsv
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/path.sh
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/environment/path.dsv
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.bash
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.sh
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.zsh
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/local_setup.dsv
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.dsv
+/home/sivuiii/whoami/install/ugv_perception/share/ament_index/resource_index/packages/ugv_perception
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/cmake/ugv_perceptionConfig.cmake
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/cmake/ugv_perceptionConfig-version.cmake
+/home/sivuiii/whoami/install/ugv_perception/share/ugv_perception/package.xml

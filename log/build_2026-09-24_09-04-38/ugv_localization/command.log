@@ -1,0 +1,6 @@
+Invoking command in '/home/sivuiii/whoami/build/ugv_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_localization -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_localization
+Invoked command in '/home/sivuiii/whoami/build/ugv_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/sivuiii/whoami/src/ugv_localization -DCMAKE_INSTALL_PREFIX=/home/sivuiii/whoami/install/ugv_localization
+Invoking command in '/home/sivuiii/whoami/build/ugv_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_localization -- -j16 -l16
+Invoked command in '/home/sivuiii/whoami/build/ugv_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/sivuiii/whoami/build/ugv_localization -- -j16 -l16
+Invoking command in '/home/sivuiii/whoami/build/ugv_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_localization
+Invoked command in '/home/sivuiii/whoami/build/ugv_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/sivuiii/whoami/build/ugv_localization
