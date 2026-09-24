@@ -92,7 +92,7 @@ Baylands / RUGD / tutorial ONNX = eval/scaffold only.
 ## 6. Tech stack
 | Layer | Choice | Notes |
 |---|---|---|
-| Middleware | ROS 2 Jazzy (Humble OK) | |
+| Middleware | lyrical | |
 | Vision recommended / minimum | Stereo·RGB-D / mono | §10 |
 | **Brain** | RTAB-Map + Nav2 (Smac2D + RPP) | |
 | **Perception Port** | Canonical mask + conf + freshness + frame | §8 |
