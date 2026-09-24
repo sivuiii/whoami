@@ -1,0 +1,33 @@
+# Dev 4 — Recovery behaviors: spin in place, wait, backtrack (BackUp).  dev.md Dev 4 task 4.
+#
+# behavior_server also publishes `cmd_vel`; navigation.launch.py remaps it to
+# /cmd_vel_nav2 so recovery motion goes through Dev 5's safety authority like
+# controller output (architecture §3.1).
+#
+# Collision checking for spin/backup uses the costmaps' raw topics and published
+# footprint (Dev 3). No footprint is defined here.
+behavior_server:
+  ros__parameters:
+    enable_stamped_cmd_vel: false
+    local_costmap_topic: local_costmap/costmap_raw
+    global_costmap_topic: global_costmap/costmap_raw
+    local_footprint_topic: local_costmap/published_footprint
+    global_footprint_topic: global_costmap/published_footprint
+    cycle_frequency: 10.0
+    # Only the behaviors the architecture requires. No assisted teleop / drive-on-heading.
+    behavior_plugins: ["spin", "backup", "wait"]
+    spin:
+      plugin: "nav2_behaviors::Spin"
+    backup:
+      plugin: "nav2_behaviors::BackUp"
+    wait:
+      plugin: "nav2_behaviors::Wait"
+    local_frame: odom
+    global_frame: map
+    robot_base_frame: base_link
+    transform_tolerance: 0.1
+    # Seconds of motion checked against the costmap before each recovery step.
+    simulate_ahead_time: 2.0
+    max_rotational_vel: 0.8     # [ROBOT LIMIT] rad/s
+    min_rotational_vel: 0.3     # [ROBOT LIMIT] rad/s
+    rotational_acc_lim: 2.0     # [ROBOT LIMIT] rad/s^2

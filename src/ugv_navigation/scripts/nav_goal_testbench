@@ -1,0 +1,213 @@
+#!/usr/bin/env python3
+"""Dev 4 navigation CLI / goal testbench.
+
+  check                         Verify the /cmd_vel_nav2 vs /cmd_vel boundary, the
+                                /navigate_to_pose action server and Nav2 lifecycle states.
+  goal X,Y[,YAW] [X,Y[,YAW]...] Send NavigateToPose goals one after another, stream
+                                feedback, record /cmd_vel_nav2 and print an A->B summary.
+
+Needs a running navigation.launch.py. `goal` also needs the external inputs (Dev 2 TF +
+odom, Dev 3 costmaps); without them Nav2 cannot activate or plan, and the testbench says so.
+"""
+
+import argparse
+import csv
+import sys
+import time
+
+from geometry_msgs.msg import PoseStamped, Twist
+from lifecycle_msgs.srv import GetState
+from nav2_msgs.action import NavigateToPose
+import rclpy
+from rclpy.action import ActionClient
+from rclpy.node import Node
+
+from ugv_navigation.testbench_core import (
+    CANDIDATE_TOPIC, Endpoint, evaluate_boundary, FINAL_TOPIC, format_summary, GoalRun,
+    LIFECYCLE_NODES, NAVIGATE_ACTION, parse_goal, TwistStats, yaw_to_quaternion)
+
+STATUS_NAMES = {0: 'UNKNOWN', 1: 'ACCEPTED', 2: 'EXECUTING', 3: 'CANCELING',
+                4: 'SUCCEEDED', 5: 'CANCELED', 6: 'ABORTED'}
+
+
+class Testbench(Node):
+
+    def __init__(self):
+        super().__init__('dev4_nav_testbench')
+        self.nav_client = ActionClient(self, NavigateToPose, NAVIGATE_ACTION)
+        self.stats = TwistStats()
+        # Observe the candidate topic only; the testbench never publishes any twist.
+        self.create_subscription(Twist, CANDIDATE_TOPIC, self._on_twist, 10)
+
+    def _on_twist(self, msg):
+        self.stats.add(msg.linear.x, msg.angular.z)
+
+    def spin_for(self, seconds):
+        end = time.monotonic() + seconds
+        while time.monotonic() < end:
+            rclpy.spin_once(self, timeout_sec=0.05)
+
+    def _endpoints(self, topic):
+        return [Endpoint(i.node_name, i.node_namespace, i.topic_type)
+                for i in self.get_publishers_info_by_topic(topic)]
+
+    def boundary_report(self):
+        return evaluate_boundary(self._endpoints(CANDIDATE_TOPIC), self._endpoints(FINAL_TOPIC))
+
+    def lifecycle_states(self, timeout=2.0):
+        states = {}
+        for name in LIFECYCLE_NODES:
+            client = self.create_client(GetState, f'/{name}/get_state')
+            if not client.wait_for_service(timeout_sec=timeout):
+                states[name] = 'not running'
+                continue
+            future = client.call_async(GetState.Request())
+            rclpy.spin_until_future_complete(self, future, timeout_sec=timeout)
+            states[name] = future.result().current_state.label if future.done() else 'no reply'
+            self.destroy_client(client)
+        return states
+
+
+def print_boundary(report):
+    for line in report.info:
+        print(f'  [info] {line}')
+    for line in report.warnings:
+        print(f'  [warn] {line}')
+    for line in report.errors:
+        print(f'  [FAIL] {line}')
+    print(f'  boundary: {"PASS" if report.ok else "FAIL"}')
+
+
+def cmd_check(tb, args):
+    tb.spin_for(args.discovery)
+    print('Nav2 lifecycle states:')
+    states = tb.lifecycle_states()
+    for name, state in states.items():
+        print(f'  {name:<20} {state}')
+    print(f'Action {NAVIGATE_ACTION}:')
+    has_action = tb.nav_client.wait_for_server(timeout_sec=2.0)
+    print(f'  server {"available" if has_action else "NOT available"}')
+    print(f'Velocity boundary ({CANDIDATE_TOPIC} candidate, {FINAL_TOPIC} = Dev 5):')
+    report = tb.boundary_report()
+    print_boundary(report)
+    return 0 if report.ok and has_action else 1
+
+
+def run_goal(tb, goal, args):
+    x, y, yaw = goal
+    msg = NavigateToPose.Goal()
+    msg.pose = PoseStamped()
+    msg.pose.header.frame_id = args.frame
+    msg.pose.header.stamp = tb.get_clock().now().to_msg()
+    msg.pose.pose.position.x = x
+    msg.pose.pose.position.y = y
+    qx, qy, qz, qw = yaw_to_quaternion(yaw)
+    msg.pose.pose.orientation.x = qx
+    msg.pose.pose.orientation.y = qy
+    msg.pose.pose.orientation.z = qz
+    msg.pose.pose.orientation.w = qw
+
+    tb.stats = TwistStats()
+    feedback = {'recoveries': 0, 'last_print': 0.0}
+
+    def on_feedback(fb_msg):
+        fb = fb_msg.feedback
+        feedback['recoveries'] = fb.number_of_recoveries
+        now = time.monotonic()
+        if now - feedback['last_print'] >= 1.0:
+            feedback['last_print'] = now
+            p = fb.current_pose.pose.position
+            print(f'    pose=({p.x:.2f}, {p.y:.2f}) remaining={fb.distance_remaining:.2f} m '
+                  f'recoveries={fb.number_of_recoveries} '
+                  f'cmd_vel_nav2 msgs={tb.stats.count}')
+
+    print(f'  sending goal ({x:.2f}, {y:.2f}, yaw {yaw:.2f}) in "{args.frame}"')
+    start = time.monotonic()
+    send_future = tb.nav_client.send_goal_async(msg, feedback_callback=on_feedback)
+    rclpy.spin_until_future_complete(tb, send_future, timeout_sec=10.0)
+    handle = send_future.result() if send_future.done() else None
+    if handle is None or not handle.accepted:
+        print('    goal REJECTED (is Nav2 active? TF/costmaps available?)')
+        return GoalRun(goal, 'REJECTED', time.monotonic() - start, 0, -1, '', tb.stats)
+
+    result_future = handle.get_result_async()
+    deadline = start + args.timeout
+    while not result_future.done() and time.monotonic() < deadline:
+        rclpy.spin_once(tb, timeout_sec=0.05)
+    if not result_future.done():
+        print(f'    timeout after {args.timeout:.0f} s, canceling')
+        cancel = handle.cancel_goal_async()
+        rclpy.spin_until_future_complete(tb, cancel, timeout_sec=5.0)
+        return GoalRun(goal, 'TIMEOUT', time.monotonic() - start, feedback['recoveries'], -1,
+                       '', tb.stats)
+
+    wrapped = result_future.result()
+    elapsed = time.monotonic() - start
+    status = STATUS_NAMES.get(wrapped.status, str(wrapped.status))
+    print(f'    result {status} in {elapsed:.2f} s error_code={wrapped.result.error_code} '
+          f'{wrapped.result.error_msg}')
+    return GoalRun(goal, status, elapsed, feedback['recoveries'], wrapped.result.error_code,
+                   wrapped.result.error_msg, tb.stats)
+
+
+def cmd_goal(tb, args):
+    goals = [parse_goal(g) for g in args.goals]
+    tb.spin_for(args.discovery)
+    if not tb.nav_client.wait_for_server(timeout_sec=args.server_timeout):
+        print(f'{NAVIGATE_ACTION} not available. Start navigation.launch.py and make sure '
+              f'the Nav2 servers are active (needs Dev 2 TF and Dev 3 costmaps).')
+        return 1
+
+    runs = []
+    boundary_ok = True
+    for i, goal in enumerate(goals, 1):
+        print(f'Goal {i}/{len(goals)}')
+        runs.append(run_goal(tb, goal, args))
+        report = tb.boundary_report()
+        print_boundary(report)
+        boundary_ok = boundary_ok and report.ok
+
+    print()
+    print(format_summary(runs))
+    if args.csv:
+        with open(args.csv, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['x', 'y', 'yaw', 'status', 'elapsed_s', 'recoveries',
+                             'error_code', 'error_msg', 'cmd_msgs', 'max_abs_v', 'max_abs_w'])
+            for r in runs:
+                writer.writerow([*r.goal, r.status, f'{r.elapsed_s:.3f}', r.recoveries,
+                                 r.error_code, r.error_msg, r.twist.count,
+                                 r.twist.max_abs_linear, r.twist.max_abs_angular])
+        print(f'wrote {args.csv}')
+    all_ok = all(r.status == 'SUCCEEDED' for r in runs)
+    return 0 if all_ok and boundary_ok else 1
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('--discovery', type=float, default=2.0,
+                        help='seconds to wait for ROS graph discovery (default 2)')
+    sub = parser.add_subparsers(dest='command', required=True)
+    sub.add_parser('check', help='boundary / action / lifecycle check')
+    goal = sub.add_parser('goal', help='send NavigateToPose goals and benchmark them')
+    goal.add_argument('goals', nargs='+', metavar='X,Y[,YAW]')
+    goal.add_argument('--frame', default='map')
+    goal.add_argument('--timeout', type=float, default=180.0, help='per-goal seconds')
+    goal.add_argument('--server-timeout', type=float, default=10.0)
+    goal.add_argument('--csv', help='write per-goal results to this CSV file')
+    args = parser.parse_args(argv)
+
+    rclpy.init()
+    tb = Testbench()
+    try:
+        return cmd_check(tb, args) if args.command == 'check' else cmd_goal(tb, args)
+    except KeyboardInterrupt:
+        return 130
+    finally:
+        tb.destroy_node()
+        rclpy.try_shutdown()
+
+
+if __name__ == '__main__':
+    sys.exit(main())

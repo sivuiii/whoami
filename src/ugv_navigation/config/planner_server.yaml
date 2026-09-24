@@ -1,0 +1,42 @@
+# Dev 4 — Global planner: Nav2 Smac2D (2D feasible A* search).  architecture.md §6, §11
+#
+# Runs on the global costmap hosted inside planner_server. The costmap's layers,
+# footprint / robot_radius and inflation are Dev 3's and are NOT set here; they come
+# from the costmap params file passed to navigation.launch.py (costmap_params_file).
+#
+# Smac2D treats the robot as circular (uses the costmap's inscribed / inflation cost),
+# so no footprint value is needed or invented in this file.
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 20.0
+    # Wait for a fresh global costmap before planning, so a replan sees the latest
+    # live hazard data (dynamic reactivity, architecture §11).
+    costmap_update_timeout: 1.0
+    planner_plugins: ["GridBased"]
+
+    GridBased:
+      plugin: "nav2_smac_planner::SmacPlanner2D"
+      # Goal tolerance (m) if the exact goal cell is blocked.
+      tolerance: 0.25
+      # Plan at full costmap resolution; the costmap resolution itself is Dev 3's.
+      downsample_costmap: false
+      downsampling_factor: 1
+      # Unknown != free (architecture §8.1, §16). Never plan through NO_INFORMATION cells.
+      allow_unknown: false
+      # -1 = unlimited; bounded by max_planning_time instead.
+      max_iterations: 1000000
+      max_on_approach_iterations: 1000
+      terminal_checking_interval: 5000
+      # Seconds. Replanning runs continuously from the BT, so keep one plan short.
+      max_planning_time: 1.0
+      # Weight on costmap cost vs distance: >1 keeps paths away from inflated hazards
+      # rather than hugging them. Tune together with Dev 3's inflation settings.
+      cost_travel_multiplier: 2.0
+      # false: last path pose keeps the goal's yaw; RPP rotates to it on arrival
+      # (use_rotate_to_heading) and the goal checker enforces yaw_goal_tolerance.
+      use_final_approach_orientation: false
+      smoother:
+        max_iterations: 1000
+        w_smooth: 0.3
+        w_data: 0.2
+        tolerance: 1.0e-10

@@ -3,14 +3,41 @@
 <package format="3">
   <name>ugv_navigation</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>
+    UGV Nav2 stack. Dev 4 (Autonomy &amp; Motion Core): Smac2D planner, Regulated Pure Pursuit,
+    NavigateToPose behavior tree + recoveries, candidate twist on /cmd_vel_nav2, goal testbench.
+    Costmap layers / footprint (Dev 3) are loaded from an external params file.
+  </description>
   <maintainer email="sivuiii@todo.todo">sivuiii</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <!-- Dev 4 runtime: standard Nav2 servers and plugins only -->
+  <exec_depend>nav2_planner</exec_depend>
+  <exec_depend>nav2_smac_planner</exec_depend>
+  <exec_depend>nav2_controller</exec_depend>
+  <exec_depend>nav2_regulated_pure_pursuit_controller</exec_depend>
+  <exec_depend>nav2_behaviors</exec_depend>
+  <exec_depend>nav2_bt_navigator</exec_depend>
+  <exec_depend>nav2_behavior_tree</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <!-- Testbench -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>nav2_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>lifecycle_msgs</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <test_depend>ament_cmake_ros</test_depend>
+  <test_depend>python3-pytest</test_depend>
+  <test_depend>python3-yaml</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

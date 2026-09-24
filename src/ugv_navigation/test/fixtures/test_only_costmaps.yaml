@@ -1,0 +1,33 @@
+# TEST FIXTURE ONLY — NOT the product costmap configuration.
+#
+# The real global/local costmap layers, footprint and inflation belong to Dev 3.
+# This file exists only so test_navigation_graph.py can *configure* (never activate)
+# the costmap sub-nodes inside planner_server / controller_server and inspect the
+# Dev 4 ROS graph. It has no perception, semantic, voxel or static-map layer, and its
+# robot_radius is a test value, not a claim about the robot.
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      global_frame: map
+      robot_base_frame: base_link
+      robot_radius: 0.2
+      resolution: 0.1
+      rolling_window: true
+      width: 10
+      height: 10
+      plugins: ["inflation_layer"]
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      global_frame: odom
+      robot_base_frame: base_link
+      robot_radius: 0.2
+      resolution: 0.1
+      rolling_window: true
+      width: 3
+      height: 3
+      plugins: ["inflation_layer"]
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"

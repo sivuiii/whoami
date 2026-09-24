@@ -1,0 +1,51 @@
+<!--
+  Dev 4 — NavigateToPose behavior tree for the UGV.
+
+  Dynamic hazard reactivity (architecture §11): at 2 Hz the tree checks the current
+  path. It replans with Smac2D ("GridBased") when
+    - the path is older than 2 s (picks up any live costmap change), or
+    - the goal was updated, or
+    - IsPathValid fails (new lethal cost from the live mask / voxel data on the path).
+  Between replans, RPP ("FollowPath") reacts to the local costmap every control cycle
+  (cost-regulated speed + collision detection).
+
+  Recovery (spin in place, wait, backtrack) runs round-robin when planning or control
+  fails, until 6 retries are used up.
+
+  Costmap clearing (ClearEntireCostmap / ClearCostmap*) is deliberately NOT used:
+  wiping the costmaps would drop Dev 3's semantic hazard / unknown / fail-safe ROI cost
+  until the next update and present those cells as free (architecture §8.1, §8.6, §9).
+-->
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
+      <PipelineSequence name="NavigateWithReplanning">
+        <ControllerSelector selected_controller="{selected_controller}" default_controller="FollowPath" topic_name="controller_selector"/>
+        <PlannerSelector selected_planner="{selected_planner}" default_planner="GridBased" topic_name="planner_selector"/>
+        <RateController hz="2.0">
+          <Fallback name="ReplanIfNeeded">
+            <ReactiveSequence name="KeepCurrentPath">
+              <Inverter>
+                <PathExpiringTimer seconds="2.0" path="{path}"/>
+              </Inverter>
+              <Inverter>
+                <GlobalUpdatedGoal/>
+              </Inverter>
+              <IsPathValid path="{path}"/>
+            </ReactiveSequence>
+            <ComputePathToPose goal="{goal}" path="{path}" planner_id="{selected_planner}" error_code_id="{compute_path_error_code}"/>
+          </Fallback>
+        </RateController>
+        <FollowPath path="{path}" controller_id="{selected_controller}" error_code_id="{follow_path_error_code}"/>
+      </PipelineSequence>
+      <ReactiveFallback name="RecoveryFallback">
+        <GoalUpdated/>
+        <RoundRobin name="RecoveryActions">
+          <Spin spin_dist="1.57"/>
+          <Wait wait_duration="5.0"/>
+          <BackUp backup_dist="0.30" backup_speed="0.10"/>
+        </RoundRobin>
+      </ReactiveFallback>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>
