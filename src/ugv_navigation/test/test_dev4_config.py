@@ -228,26 +228,62 @@ def test_candidate_twist_is_unstamped():
 def test_launch_remaps_every_cmd_vel_publisher_to_candidate():
     launch = load_launch_module()
     assert launch.CMD_VEL_REMAP == [('cmd_vel', '/cmd_vel_nav2')]
-    publishers = {name for _, _, name, _, pub in launch.NAV2_SERVERS if pub}
+    specs = launch.nav2_specs('dev3.yaml', '', '', 'bt.xml', {}, False)
+    publishers = {s['name'] for s in specs if s['remappings']}
     assert publishers == {'controller_server', 'behavior_server'}
+    assert all(s['remappings'] == launch.CMD_VEL_REMAP for s in specs if s['remappings'])
 
 
 def launch_context(**overrides):
     context = LaunchContext()
     context.launch_configurations.update({
         'costmap_params_file': str(FIXTURE_COSTMAPS), 'robot': '', 'robot_params_file': '',
-        'footprint_file': '', 'bt_xml': str(BT_XML), 'use_sim_time': 'false', 'autostart': 'false',
-        'log_level': 'info', **overrides})
+        'footprint_file': '', 'bt_xml': str(BT_XML), 'use_sim_time': 'false',
+        'autostart': 'false', 'log_level': 'info', 'use_composition': 'true', **overrides})
     return context
 
 
 def test_launch_starts_only_dev4_nodes():
-    nodes = load_launch_module()._launch_setup(launch_context())
-    assert {(n.node_package, n.node_executable) for n in nodes} == {
+    specs = load_launch_module().nav2_specs('dev3.yaml', '', '', 'bt.xml', {}, False)
+    assert {(s['package'], s['executable']) for s in specs} == {
         ('nav2_planner', 'planner_server'), ('nav2_controller', 'controller_server'),
         ('nav2_behaviors', 'behavior_server'), ('nav2_bt_navigator', 'bt_navigator'),
         ('nav2_lifecycle_manager', 'lifecycle_manager'),
         ('ugv_navigation', 'nav2_heartbeat')}
+
+
+def launched(launch=None, **overrides):
+    """(containers, standalone nodes) that _launch_setup returns."""
+    from launch_ros.actions import ComposableNodeContainer, Node
+    actions = (launch or load_launch_module())._launch_setup(launch_context(**overrides))
+    return ([a for a in actions if isinstance(a, ComposableNodeContainer)],
+            [a for a in actions if isinstance(a, Node)
+             and not isinstance(a, ComposableNodeContainer)])
+
+
+def test_composition_puts_nav2_in_one_container_and_keeps_heartbeat_separate():
+    containers, nodes = launched()
+    assert len(containers) == 1
+    # Heartbeat must survive a container crash, so it is never composed.
+    assert [n.node_executable for n in nodes] == ['nav2_heartbeat']
+    specs = load_launch_module().nav2_specs('dev3.yaml', '', '', 'bt.xml', {}, False)
+    assert [s['name'] for s in specs if s['plugin'] is None] == ['nav2_heartbeat']
+
+
+def test_container_gets_costmap_params_for_child_costmap_nodes():
+    # Costmaps are child nodes of planner/controller; they read the process's
+    # --params-file, so the container needs Dev 3's costmap file (+ footprint, robot).
+    launch = load_launch_module()
+    specs = launch.nav2_specs('dev3.yaml', 'robot.yaml', 'fp.yaml', 'bt.xml', {}, False)
+    files = launch.container_parameter_files([s for s in specs if s['plugin']])
+    defaults = [str(CONFIG / f) for f in DEV4_YAMLS]
+    assert sorted(files[:4]) == sorted(defaults)
+    assert files[4:] == ['dev3.yaml', 'fp.yaml', 'robot.yaml']
+
+
+def test_without_composition_every_node_is_a_process():
+    containers, nodes = launched(use_composition='false')
+    assert not containers and len(nodes) == 6
 
 
 def test_launch_requires_dev3_costmap_params():
@@ -260,8 +296,8 @@ def test_launch_requires_dev3_costmap_params():
 def test_launch_uses_dev3_default_costmap_params_when_present():
     launch = load_launch_module()
     launch.DEFAULT_COSTMAP_PARAMS = FIXTURE_COSTMAPS  # stands in for Dev 3's file
-    nodes = launch._launch_setup(launch_context(costmap_params_file=''))
-    assert len(nodes) == 6
+    containers, nodes = launched(launch, costmap_params_file='')
+    assert len(containers) == 1 and len(nodes) == 1
 
 
 # ---------------------------------------------------------------- per-robot overlays
@@ -331,7 +367,11 @@ def test_launch_robot_arg_loads_overlay_last(robot):
     # Dev 4 defaults < Dev 3 costmaps < robot overlay
     assert launch.parameter_files('controller_server.yaml', 'dev3.yaml', overlay) == [
         str(CONFIG / 'controller_server.yaml'), 'dev3.yaml', overlay]
-    assert len(launch._launch_setup(launch_context(robot=robot))) == 6
+    specs = launch.nav2_specs('dev3.yaml', overlay, '', 'bt.xml', {}, False)
+    for s in specs[:4]:  # every Nav2 server gets the overlay as its last file
+        assert [p for p in s['parameters'] if isinstance(p, str)][-1] == overlay
+    containers, _ = launched(launch, robot=robot)
+    assert len(containers) == 1
 
 
 FIXTURE_FOOTPRINT = PKG / 'test' / 'fixtures' / 'test_only_footprint_primary.yaml'
@@ -354,8 +394,28 @@ def test_footprint_only_goes_to_costmap_hosts():
     # planner_server hosts global_costmap, controller_server hosts local_costmap.
     assert launch.COSTMAP_HOSTS == {'planner_server': 'global_costmap',
                                     'controller_server': 'local_costmap'}
-    nodes = launch._launch_setup(launch_context(footprint_file=str(FIXTURE_FOOTPRINT)))
-    assert len(nodes) == 6
+    specs = launch.nav2_specs('dev3.yaml', '', 'fp.yaml', 'bt.xml', {}, False)
+    with_fp = {s['name'] for s in specs if 'fp.yaml' in s['parameters']}
+    assert with_fp == set(launch.COSTMAP_HOSTS)
+
+
+def test_footprint_params_file_is_reused_not_leaked():
+    launch = load_launch_module()
+    footprint = launch.load_footprint(FIXTURE_FOOTPRINT)
+    assert launch.footprint_params_file(footprint) == launch.footprint_params_file(footprint)
+
+
+def test_footprint_search_stops_at_repo_root(tmp_path):
+    launch = load_launch_module()
+    (tmp_path / 'config' / 'robots').mkdir(parents=True)
+    (tmp_path / 'config' / 'robots' / 'footprint_primary.yaml').write_text(
+        FIXTURE_FOOTPRINT.read_text())
+    repo = tmp_path / 'repo'
+    (repo / '.git').mkdir(parents=True)
+    pkg = repo / 'src' / 'ugv_navigation'
+    pkg.mkdir(parents=True)
+    # A footprint above the repository root must not be picked up.
+    assert launch.find_footprint_file('primary', pkg) == ''
 
 
 def test_robot_arg_finds_dev5_footprint_above_package(tmp_path):

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Build and test ROS packages inside the Lyrical Nav2 image.
 #
-#   docker/test_in_lyrical.sh src/ugv_navigation [more package dirs...]
+#   src/ugv_navigation/docker/test_in_lyrical.sh src/ugv_navigation [more package dirs...]
 #
 # Package dirs are mounted read-only and copied into the container, so nothing
 # (build/, install/, log/, __pycache__) is written back to the repo.
@@ -9,7 +9,7 @@
 set -euo pipefail
 
 IMAGE=ugv-lyrical-nav2
-REPO=$(cd "$(dirname "$0")/.." && pwd)
+HERE=$(cd "$(dirname "$0")" && pwd)
 
 if [[ $# -eq 0 ]]; then
   echo "usage: $0 <package dir> [package dir...]" >&2
@@ -17,7 +17,7 @@ if [[ $# -eq 0 ]]; then
 fi
 
 if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
-  docker build -t "$IMAGE" -f "$REPO/docker/lyrical-nav2.Dockerfile" "$REPO/docker"
+  docker build -t "$IMAGE" -f "$HERE/lyrical-nav2.Dockerfile" "$HERE"
 fi
 
 mounts=()

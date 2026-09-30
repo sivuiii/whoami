@@ -8,7 +8,8 @@
 # so no footprint value is needed or invented in this file.
 planner_server:
   ros__parameters:
-    expected_planner_frequency: 20.0
+    # The BT replans at 2 Hz (RateController); only used to warn about slow planning.
+    expected_planner_frequency: 2.0
     # Wait for a fresh global costmap before planning, so a replan sees the latest
     # live hazard data (dynamic reactivity, architecture §11).
     costmap_update_timeout: 1.0

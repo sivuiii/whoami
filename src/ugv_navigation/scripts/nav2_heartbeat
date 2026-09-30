@@ -28,14 +28,25 @@ class Nav2Heartbeat(Node):
         super().__init__('nav2_heartbeat')
         servers = tuple(self.declare_parameter('servers', list(DEFAULT_SERVERS)).value)
         rate_hz = self.declare_parameter('rate_hz', 20.0).value
-        poll_hz = self.declare_parameter('poll_hz', 5.0).value
+        # A get_state reply takes <= ~12 ms (measured, composed or not). Replies can be
+        # dropped (e.g. right after activation, while DDS still matches the service
+        # endpoints), so an unanswered request is abandoned after request_timeout and
+        # re-sent on the next poll: one lost reply never makes a healthy server stale.
+        poll_hz = self.poll_hz = self.declare_parameter('poll_hz', 10.0).value
         max_age = self.declare_parameter('max_age', 0.5).value
         self.monitor = HeartbeatMonitor(servers=servers, max_age_s=max_age)
         self.clients_ = {s: self.create_client(GetState, f'/{s}/get_state') for s in servers}
         # server -> (future, sent_s); a request older than request_timeout is dropped.
         self.pending = {}
-        self.request_timeout = self.declare_parameter('request_timeout', 1.0).value
+        self.request_timeout = self.declare_parameter('request_timeout', 0.2).value
         self.last_status = None
+        # If this process itself was not scheduled for a while (CPU contention), its
+        # timers run before the queued replies: judging reply age right then would blame
+        # Nav2 for our own pause. After a late tick, skip the age check until one fresh
+        # poll round could complete; explicit non-active replies still fail at once.
+        self.tick_period = 1.0 / rate_hz
+        self.last_tick = None
+        self.age_check_from = 0.0
         self.pub = self.create_publisher(Bool, HEARTBEAT_TOPIC, 10)
         self.status_pub = self.create_publisher(
             String, STATUS_TOPIC,
@@ -70,7 +81,11 @@ class Nav2Heartbeat(Node):
         self.monitor.record(server, future.result().current_state.label, self.now_s())
 
     def tick(self):
-        healthy, reason = self.monitor.evaluate(self.now_s())
+        now = self.now_s()
+        if self.last_tick is not None and now - self.last_tick > 2.5 * self.tick_period:
+            self.age_check_from = now + self.request_timeout + 1.0 / self.poll_hz
+        self.last_tick = now
+        healthy, reason = self.monitor.evaluate(now, check_age=now >= self.age_check_from)
         self.pub.publish(Bool(data=healthy))
         if reason != self.last_status:
             self.last_status = reason

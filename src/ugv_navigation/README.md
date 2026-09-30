@@ -39,6 +39,13 @@ Dev 3 costmap params ─► local_costmap  (in controller_server) ─► RPP ◄
   Dev 5's.
 - **No footprint and no costmap values** are set in any Dev 4 file. Smac2D and RPP
   read the footprint and inflation from Dev 3's costmaps.
+- **Composition by default.** The four Nav2 servers and the lifecycle manager run as
+  components in one `nav2_container` (`use_composition:=false` for separate processes).
+  Measured on Lyrical, same A→B goal, fresh container each: **120 MB vs 315 MB RSS
+  (−62 %), 4.8 s vs 7.0 s CPU (−31 %)**, identical path and goal time. The container
+  also gets every parameter file: the costmaps are child nodes that read their
+  sections from the process's `--params-file` arguments. `nav2_heartbeat` is never
+  composed, so it still reports `false` if the container dies.
 - **Target distro is ROS 2 Lyrical** (`CLAUDE.md`). Configs use Lyrical Nav2 names
   (`error_code_name_prefixes`, `ValidatePath`, RPP `max_linear_vel`, controller
   `path_handler_plugins`) and will not load on Jazzy Nav2. The static tests check
@@ -96,7 +103,7 @@ Without a native Lyrical install, build + run every test in Docker (from the rep
 nothing is written back to the repo):
 
 ```bash
-docker/test_in_lyrical.sh src/ugv_navigation
+src/ugv_navigation/docker/test_in_lyrical.sh src/ugv_navigation
 ```
 
 Native Lyrical:
@@ -110,6 +117,9 @@ source install/setup.bash
 # Launch (uses Dev 3's config/costmaps.yaml if present; otherwise pass the file)
 ros2 launch ugv_navigation navigation.launch.py
 ros2 launch ugv_navigation navigation.launch.py costmap_params_file:=/path/to/dev3_costmaps.yaml
+
+# Separate processes instead of one container (debugging)
+ros2 launch ugv_navigation navigation.launch.py use_composition:=false
 
 # Per robot: limits (config/robots/<robot>/nav2_limits.yaml) + Dev 5's
 # config/robots/footprint_<robot>.yaml if found above this package

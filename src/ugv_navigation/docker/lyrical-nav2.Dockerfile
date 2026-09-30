@@ -1,8 +1,9 @@
 # ROS 2 Lyrical + the Nav2 packages ugv_navigation needs, for building and testing
 # without a native Lyrical install (CLAUDE.md: target distro is Lyrical Luth).
 #
-#   docker build -t ugv-lyrical-nav2 -f docker/lyrical-nav2.Dockerfile docker
-#   docker/test_in_lyrical.sh src/ugv_navigation
+#   docker build -t ugv-lyrical-nav2 -f src/ugv_navigation/docker/lyrical-nav2.Dockerfile \
+#     src/ugv_navigation/docker
+#   src/ugv_navigation/docker/test_in_lyrical.sh src/ugv_navigation
 #
 # dist-upgrade is required: the ros:lyrical-ros-base image lags the apt repo, and
 # newer Nav2 on top of its older core libs crashes at startup with

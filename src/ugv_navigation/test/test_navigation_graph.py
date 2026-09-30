@@ -26,7 +26,8 @@ from nav2_msgs.action import NavigateToPose
 import pytest
 import rclpy
 from rclpy.action import ActionClient
-from std_msgs.msg import Bool
+from rclpy.qos import DurabilityPolicy, QoSProfile
+from std_msgs.msg import Bool, String
 
 PKG = Path(__file__).resolve().parent.parent
 LAUNCH_FILE = PKG / 'launch' / 'navigation.launch.py'
@@ -108,14 +109,21 @@ def test_navigate_to_pose_action_server_exists(configured_stack):
     client.destroy()
 
 
+STATUS_LOG = []  # /ugv/nav2_status reasons seen, for assertion messages
+
+
 def heartbeats(node, seconds):
     seen = []
     sub = node.create_subscription(Bool, '/ugv/nav2_heartbeat', lambda m: seen.append(m.data),
                                    10)
+    status = node.create_subscription(
+        String, '/ugv/nav2_status', lambda m: STATUS_LOG.append(m.data),
+        QoSProfile(depth=10, durability=DurabilityPolicy.TRANSIENT_LOCAL))
     end = time.monotonic() + seconds
     while time.monotonic() < end:
         rclpy.spin_once(node, timeout_sec=0.05)
     node.destroy_subscription(sub)
+    node.destroy_subscription(status)
     return seen
 
 
@@ -136,14 +144,21 @@ def test_stack_activates_with_ugv_behavior_tree(configured_stack):
                                 {'controller_server', 'behavior_server'})
     assert {i.node_name for i in infos} == {'controller_server', 'behavior_server'}
     assert configured_stack.get_publishers_info_by_topic('/cmd_vel') == []
-    # Everything active -> heartbeat turns true (poll 5 Hz, publish 20 Hz).
+    # Everything active -> heartbeat turns true (poll 10 Hz, publish 20 Hz) ...
     assert heartbeats(configured_stack, 2.0)[-10:] == [True] * 10
+    # ... and stays true: no false "stale" while every server is healthy.
+    steady = heartbeats(configured_stack, 5.0)
+    assert len(steady) >= 80 and all(steady), \
+        f'{steady.count(False)} false heartbeats; nav2_status: {STATUS_LOG[-6:]}'
 
 
 def test_heartbeat_drops_when_a_server_crashes(configured_stack):
     # Runs after activation. Architecture §12: Nav2 crash -> Dev 5 hold.
     assert heartbeats(configured_stack, 1.0)[-5:] == [True] * 5
-    subprocess.run(['pkill', '-KILL', '-f', '__node:=controller_server'], check=True)
+    # Kill the process hosting controller_server: the Nav2 container (default,
+    # use_composition) or the standalone server.
+    subprocess.run(['pkill', '-KILL', '-f', '__node:=(nav2_container|controller_server)'],
+                   check=True)
     seen = heartbeats(configured_stack, 3.0)
     assert seen and seen[-1] is False, 'heartbeat still true after controller_server died'
     # Keeps publishing (false) so Dev 5 sees a fresh "unhealthy", not just silence.

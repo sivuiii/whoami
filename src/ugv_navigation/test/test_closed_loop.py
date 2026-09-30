@@ -31,6 +31,7 @@ from nav_msgs.msg import OccupancyGrid, Odometry
 import pytest
 import rclpy
 from rclpy.action import ActionClient
+from rclpy.executors import SingleThreadedExecutor
 from rclpy.qos import DurabilityPolicy, QoSProfile, ReliabilityPolicy
 import yaml
 
@@ -61,10 +62,8 @@ RESULTS = []
 
 
 @pytest.fixture(scope='module', autouse=True)
-def ros_and_benchmark():
-    rclpy.init()
+def benchmark_report():
     yield
-    rclpy.shutdown()
     if RESULTS:
         print('\n' + format_summary([r['run'] for r in RESULTS]))
         out = os.environ.get('UGV_CLOSED_LOOP_CSV')
@@ -113,60 +112,55 @@ class Recorder:
         self.global_costmap = True
 
 
-def spin_until(node, predicate, timeout):
+def spin_until(executor, predicate, timeout):
     end = time.monotonic() + timeout
     while time.monotonic() < end:
         if predicate():
             return True
-        rclpy.spin_once(node, timeout_sec=0.05)
+        executor.spin_once(timeout_sec=0.05)
     return predicate()
 
 
-def bt_navigator_active(node):
+def bt_navigator_active(node, executor):
     client = node.create_client(GetState, '/bt_navigator/get_state')
     try:
         if not client.wait_for_service(timeout_sec=0.5):
             return False
         future = client.call_async(GetState.Request())
-        rclpy.spin_until_future_complete(node, future, timeout_sec=2.0)
+        executor.spin_until_future_complete(future, timeout_sec=2.0)
         return future.done() and future.result().current_state.label == 'active'
     finally:
         node.destroy_client(client)
 
 
-# Nodes of one scenario run; the next run must not start while any is still in the graph
-# (same names, and a stale scenario map on the latched topic).
-HARNESS_NODES = {'planner_server', 'controller_server', 'behavior_server', 'bt_navigator',
-                 'lifecycle_manager_navigation', 'nav2_heartbeat', 'test_fake_base',
-                 'test_scenario_map', 'test_map_to_odom'}
+# Each scenario runs on its own ROS domain: processes of the previous scenario (the
+# composed Nav2 container takes ~5 s to exit and its discovery entries linger ~15 s)
+# can never be seen by the next one, and nothing has to wait for them to disappear.
+_DOMAIN_COUNTER = iter(range(1, 1000))
 
 
-def wait_until_graph_clear(timeout=30.0):
-    probe = rclpy.create_node('closed_loop_graph_probe')
-    try:
-        end = time.monotonic() + timeout
-        while time.monotonic() < end:
-            if not HARNESS_NODES & set(probe.get_node_names()):
-                return
-            rclpy.spin_once(probe, timeout_sec=0.2)
-        left = sorted(HARNESS_NODES & set(probe.get_node_names()))
-        raise AssertionError(f'previous scenario still running: {left}')
-    finally:
-        probe.destroy_node()
+def next_domain_id():
+    base = int(os.environ.get('ROS_DOMAIN_ID', '0'))
+    return (base + next(_DOMAIN_COUNTER)) % 101  # 0..100: valid, no ephemeral ports
 
 
 def run_scenario(scenario, footprint_file):
-    wait_until_graph_clear()
+    domain_id = next_domain_id()
     proc = subprocess.Popen(
         ['ros2', 'launch', str(HARNESS / 'closed_loop.launch.py'),
          f'scenario:={scenario.name}', f'footprint_file:={footprint_file}'],
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, start_new_session=True)
-    node = rclpy.create_node(f'closed_loop_test_{scenario.name}')
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, start_new_session=True,
+        env={**os.environ, 'ROS_DOMAIN_ID': str(domain_id)})
+    context = rclpy.Context()
+    rclpy.init(context=context, domain_id=domain_id)
+    executor = SingleThreadedExecutor(context=context)
+    node = rclpy.create_node(f'closed_loop_test_{scenario.name}', context=context)
+    executor.add_node(node)
     rec = Recorder(node)
     try:
-        assert spin_until(node, lambda: bt_navigator_active(node), 60.0), \
+        assert spin_until(executor, lambda: bt_navigator_active(node, executor), 60.0), \
             f'{scenario.name}: Nav2 did not become active'
-        assert spin_until(node, lambda: rec.global_costmap and rec.maps, 20.0), \
+        assert spin_until(executor, lambda: rec.global_costmap and rec.maps, 20.0), \
             f'{scenario.name}: scenario map never reached the global costmap'
 
         client = ActionClient(node, NavigateToPose, '/navigate_to_pose')
@@ -186,11 +180,11 @@ def run_scenario(scenario, footprint_file):
         rec.poses.clear()
         start = time.monotonic()
         send = client.send_goal_async(goal, feedback_callback=on_feedback)
-        rclpy.spin_until_future_complete(node, send, timeout_sec=10.0)
+        executor.spin_until_future_complete(send, timeout_sec=10.0)
         handle = send.result()
         assert handle is not None and handle.accepted, f'{scenario.name}: goal rejected'
         result = handle.get_result_async()
-        spin_until(node, result.done, scenario.timeout_s)
+        spin_until(executor, result.done, scenario.timeout_s)
         elapsed = time.monotonic() - start
         if not result.done():
             handle.cancel_goal_async()
@@ -199,12 +193,14 @@ def run_scenario(scenario, footprint_file):
             wrapped = result.result()
             status = 'SUCCEEDED' if wrapped.status == 4 else f'STATUS_{wrapped.status}'
             code, msg = wrapped.result.error_code, wrapped.result.error_msg
-        spin_until(node, lambda: False, 0.5)  # let the last odometry arrive
+        spin_until(executor, lambda: False, 0.5)  # let the last odometry arrive
         final_cmd_vel = node.get_publishers_info_by_topic('/cmd_vel')
         run = GoalRun(scenario.goal, status, elapsed, recoveries[0], code, msg, rec.stats)
         return run, rec, final_cmd_vel
     finally:
+        executor.shutdown()
         node.destroy_node()
+        rclpy.shutdown(context=context)
         os.killpg(proc.pid, signal.SIGINT)
         try:
             output, _ = proc.communicate(timeout=30)

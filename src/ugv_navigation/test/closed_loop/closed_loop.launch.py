@@ -30,6 +30,7 @@ def generate_launch_description():
         DeclareLaunchArgument('footprint_file', default_value='',
                               description='Robot footprint (Dev 5 format); empty = the '
                                           'fixture robot_radius 0.2 m'),
+        DeclareLaunchArgument('use_composition', default_value='true'),
         DeclareLaunchArgument('scenario', default_value='open',
                               description='open | wall_gap | corridor | unknown_block | '
                                           'dynamic_obstacle'),
@@ -44,5 +45,6 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(str(PKG / 'launch' / 'navigation.launch.py')),
             launch_arguments={'costmap_params_file': str(COSTMAPS),
-                              'footprint_file': LaunchConfiguration('footprint_file')}.items()),
+                              'footprint_file': LaunchConfiguration('footprint_file'),
+                              'use_composition': LaunchConfiguration('use_composition')}.items()),
     ])

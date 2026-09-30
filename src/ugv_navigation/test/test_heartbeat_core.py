@@ -57,3 +57,13 @@ def test_recovers_when_server_is_active_again():
     assert not monitor.evaluate(11.0)[0]
     all_active(monitor, 11.0)
     assert monitor.evaluate(11.1) == (True, 'ok')
+
+
+def test_age_check_can_be_skipped_after_a_monitor_stall():
+    monitor = HeartbeatMonitor(max_age_s=0.5)
+    all_active(monitor, 10.0)
+    # The monitoring process was paused: old reply times are not evidence of a fault ...
+    assert monitor.evaluate(11.0, check_age=False) == (True, 'ok')
+    # ... but an explicit non-active reply still fails immediately.
+    monitor.record('planner_server', 'inactive', 11.0)
+    assert not monitor.evaluate(11.0, check_age=False)[0]
